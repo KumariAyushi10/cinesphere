@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>🎬 CineSphere - Movie Explorer</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png" />
+</head>
+<body>
+  <header>
+    <div class="logo">🎬 CineSphere</div>
+    <nav id="navbar">
+      <button onclick="getTrending()">Trending</button>
+      <button onclick="getTopRated()">Top Rated</button>
+      <button onclick="getUpcoming()">Upcoming</button>
+      <button onclick="filterGenre('Animation')">Animation</button>
+      <button onclick="filterGenre('Family')">Family</button>
+      <button onclick="filterGenre('Documentary')">Documentary</button>
+      <button id="watchlistBtn">📃 Watchlist</button>
+      <button id="themeToggle">🌓 Theme</button>
+    </nav>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search movies or shows..." />
+      <select id="genreSelect" onchange="filterByGenreDropdown()">
+        <option value="">🎯 Choose Genre</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <section id="movie-section">
+      <div id="movieGrid" class="grid"></div>
+    </section>
+    <section id="watchlistSection" class="hidden">
+      <h2>🎥 Your Watchlist</h2>
+      <div id="watchlistGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <div id="trailerModal" class="modal">
+    <div class="modal-content">
+      <span id="closeTrailer" class="close-btn">&times;</span>
+      <iframe id="trailerFrame" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
